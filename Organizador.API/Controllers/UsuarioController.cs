@@ -19,7 +19,7 @@ namespace Organizador.API.Controllers
             _dataContext = context;
         }
 
-        [HttpGet("api/getUsuario")]
+        [HttpGet]
         public ActionResult<IEnumerable<Usuario>> GetUsuario()
         {
             _dataContext = new DataContext();
@@ -29,7 +29,7 @@ namespace Organizador.API.Controllers
             return data.ToList();
         }
 
-         [HttpPost("api/createUsuario")]
+         [HttpPost]
         public async Task<ActionResult> Cadastro([FromBody]Usuario usuario)
         {
             _dataContext = new DataContext();
@@ -40,7 +40,7 @@ namespace Organizador.API.Controllers
             return Created("Objeto pessoa", usuario);
         }
 
-        [HttpPut("api/atualizaUsuario")]
+        [HttpPut]
         public async Task<ActionResult> Atualiza([FromBody] Usuario usuario)
         {
             _dataContext = new DataContext();
@@ -56,7 +56,7 @@ namespace Organizador.API.Controllers
             return Ok("Updated!");
         }
 
-         [HttpDelete("api/deleteUsuario")]
+         [HttpDelete]
         public async Task<ActionResult> Delete([FromBody] Usuario usuario)
         {
             _dataContext = new DataContext();
